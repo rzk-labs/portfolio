@@ -72,13 +72,13 @@
       '<circle cx="0" cy="-16" r="9"/><circle cx="15" cy="-5" r="9"/><circle cx="9" cy="13" r="9"/><circle cx="-9" cy="13" r="9"/><circle cx="-15" cy="-5" r="9"/><circle cx="0" cy="0" r="6" fill="#6b1e3a"/></g>';
   }
   function doodleHero() {
-    return '<svg class="doodle" style="left:-10px;top:0;width:100%;height:100%" viewBox="0 0 360 260" preserveAspectRatio="none">' +
+    return '<svg class="doodle" style="left:-10px;top:0;width:100%;height:250px" viewBox="0 0 360 250" preserveAspectRatio="none">' +
       '<path class="c draw loop" d="M22 70c8-26 30-30 42-12s-14 34-32 20" stroke="#e8623f" stroke-width="7"/>' +
       '<path class="c draw d1" d="M300 40c12-20 34-16 34 4s-28 22-38 8" stroke="#9cc4ec" stroke-width="7"/>' +
       '<g class="pop" transform="translate(318 150) scale(.9)" fill="#c9d64a">' + BINTANG + '</g>' +
       bunga(30, 200, 48, "#e6b9ea") +
-      '<path class="c draw d2" d="M250 254c20-14 40 6 60-6" stroke="#8a8f2e" stroke-width="6"/>' +
-      '<path class="c draw d3" d="M60 258c20-8 40-8 60 0" stroke="#1b1b1b" stroke-width="2.5"/></svg>';
+      '<path class="c draw d2" d="M250 232c20-14 40 6 60-6" stroke="#8a8f2e" stroke-width="6"/>' +
+      '<path class="c draw d3" d="M60 238c20-8 40-8 60 0" stroke="#1b1b1b" stroke-width="2.5"/></svg>';
   }
   function doodleKecil(warna) {
     return '<svg class="doodle" style="right:-6px;top:-14px;width:70px;height:70px" viewBox="0 0 70 70">' +
