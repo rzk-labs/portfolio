@@ -65,6 +65,26 @@
     }).join("");
   }
 
+  // ---------- doodle hidup (brand v5) ----------
+  var BINTANG = '<path d="M20 2l5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/>';
+  function bunga(x, y, w, warna) {
+    return '<g class="spin" transform="translate(' + x + ' ' + y + ') scale(' + (w / 60) + ')" fill="' + warna + '">' +
+      '<circle cx="0" cy="-16" r="9"/><circle cx="15" cy="-5" r="9"/><circle cx="9" cy="13" r="9"/><circle cx="-9" cy="13" r="9"/><circle cx="-15" cy="-5" r="9"/><circle cx="0" cy="0" r="6" fill="#6b1e3a"/></g>';
+  }
+  function doodleHero() {
+    return '<svg class="doodle" style="left:-10px;top:0;width:100%;height:100%" viewBox="0 0 360 260" preserveAspectRatio="none">' +
+      '<path class="c draw loop" d="M22 70c8-26 30-30 42-12s-14 34-32 20" stroke="#e8623f" stroke-width="7"/>' +
+      '<path class="c draw d1" d="M300 40c12-20 34-16 34 4s-28 22-38 8" stroke="#9cc4ec" stroke-width="7"/>' +
+      '<g class="pop" transform="translate(318 150) scale(.9)" fill="#c9d64a">' + BINTANG + '</g>' +
+      bunga(30, 200, 48, "#e6b9ea") +
+      '<path class="c draw d2" d="M250 254c20-14 40 6 60-6" stroke="#8a8f2e" stroke-width="6"/>' +
+      '<path class="c draw d3" d="M60 258c20-8 40-8 60 0" stroke="#1b1b1b" stroke-width="2.5"/></svg>';
+  }
+  function doodleKecil(warna) {
+    return '<svg class="doodle" style="right:-6px;top:-14px;width:70px;height:70px" viewBox="0 0 70 70">' +
+      '<g class="pop" transform="translate(14 14) scale(.9)" fill="' + (warna || "#c9d64a") + '">' + BINTANG + '</g></svg>';
+  }
+
   // ---------- kerangka ----------
   function kerangka(aktif) {
     var nav = HALAMAN.map(function (h) {
@@ -73,7 +93,7 @@
     document.getElementById("kepala").innerHTML =
       '<div class="wadah"><a class="merek" href="/">Rizka<span>.</span></a><nav class="nav">' + nav + "</nav></div>";
     document.getElementById("kaki").innerHTML =
-      '<div class="wadah">© ' + new Date().getFullYear() + " Rizka · dibuat dengan cinta & kopi</div>";
+      '<div class="wadah">✿ rizka · ' + new Date().getFullYear() + ' · nggak rapi, tapi hidup</div>';
   }
 
   // ---------- halaman ----------
@@ -83,17 +103,15 @@
         var p = h[0] || {}, ent = h[1] || [];
         var aku = ent.filter(function (e) { return e.jenis === "pribadi"; })[0] || {};
         var foto = urlAman(p.foto);
-        var fotoHtml = foto ? '<img class="foto-profil" src="' + esc(foto) + '" alt="Foto ' + esc(p.nama) + '">'
-                            : '<div class="foto-profil" aria-hidden="true">👩</div>';
-        var sos = tombolAkun(aku.akun);
+        var fotoHtml = '<div class="pol wig">' + (foto ? '<img src="' + esc(foto) + '" alt="Foto ' + esc(p.nama) + '">' : '<div class="ph" aria-hidden="true">👩</div>') + "<small>aku nih</small></div>";
+        var sos = tombolAkun(aku.akun, "pepper");
+        var KET = { cerita: ["p4", "📸 Cerita", "momen hidup"], thoughts: ["p1", "💭 Thoughts", "pikiran random"], selera: ["p2", "✨ Selera", "lagi suka apa"], karya: ["p3", "🛠️ Karya", "app kecil buatanku"], sekarang: ["p5", "📍 Sekarang", "lagi fokus apa bulan ini"] };
         var pintu = HALAMAN.slice(1).map(function (x) {
-          var ket = { cerita: "momen sehari-hari", thoughts: "pikiran random", selera: "lagi suka apa",
-                      karya: "app yang aku bikin", sekarang: "lagi fokus apa" }[x.id];
-          return '<a href="' + x.url + '"><b>' + x.label + "</b><small>" + ket + "</small></a>";
+          var k = KET[x.id];
+          return '<a class="' + k[0] + '" href="' + x.url + '"><b>' + k[1] + "</b><small>" + k[2] + "</small></a>";
         }).join("");
-        return '<div class="hero">' + fotoHtml + "<div><h1>" + esc(p.nama || "Rizka") + '</h1><p class="sub">' +
-          esc(p.tagline) + "</p></div></div>" + paragraf(p.bio) +
-          (sos ? '<div class="tombol-sosmed">' + sos + "</div>" : "") +
+        return '<div class="hero">' + doodleHero() + fotoHtml + "<h1>Hello! Aku " + esc(p.nama || "Rizka") + ",<br><i>" + esc(p.tagline || "ibu, pembuat app, & pemain padel") + "</i></h1>" +
+          '<p class="sub">' + esc(p.bio) + "</p>" + (sos ? '<div class="tombol-sosmed">' + sos + "</div>" : "") + "</div>" +
           '<div class="pintu">' + pintu + "</div>";
       });
     },
@@ -106,7 +124,7 @@
             (foto ? '<img src="' + esc(foto) + '" alt="' + esc(c.judul) + '" loading="lazy">' : "") + paragraf(c.teks) +
             (link ? '<a href="' + esc(link) + '" target="_blank" rel="noopener">Lihat posting →</a>' : "") + "</article>";
         }).join("");
-        return "<h1>Cerita</h1><p class=\"sub\">Momen-momen kecil yang pengen aku simpan.</p>" +
+        return doodleKecil("#c9d64a") + "<h1>Cerita</h1><p class=\"sub\">Momen-momen kecil yang pengen aku simpan.</p>" +
           (isi || kosong("Belum ada cerita", "Cerita pertama sedang ditulis ✍️"));
       });
     },
@@ -116,7 +134,7 @@
         var isi = urutTerbaru(d || []).map(function (t) {
           return '<article class="kartu"><div class="thought">' + paragraf(t.teks) + '</div><div class="tanggal">' + tgl(t.tanggal) + "</div></article>";
         }).join("");
-        return "<h1>Thoughts</h1><p class=\"sub\">Pikiran random dan renungan hidup.</p>" +
+        return doodleKecil("#e8623f") + "<h1>Thoughts</h1><p class=\"sub\">Pikiran random dan renungan hidup.</p>" +
           (isi || kosong("Belum ada thought", "Pikiran pertama segera mampir 💭"));
       });
     },
@@ -129,7 +147,7 @@
             esc(s.judul) + "</h3>" + paragraf(s.catatan) +
             (link ? '<a href="' + esc(link) + '" target="_blank" rel="noopener">Lihat →</a>' : "") + "</article>";
         }).join("");
-        return "<h1>Selera</h1><p class=\"sub\">Hal-hal yang lagi aku suka sekarang.</p>" +
+        return doodleKecil("#ff8fb1") + "<h1>Selera</h1><p class=\"sub\">Hal-hal yang lagi aku suka sekarang.</p>" +
           (isi ? '<div class="grid-2">' + isi + "</div>" : kosong("Belum ada selera", "Daftar favorit segera diisi ✨"));
       });
     },
@@ -143,7 +161,7 @@
             (u ? '<a class="tombol" href="' + esc(u) + '" target="_blank" rel="noopener">Coba</a>' : "") +
             tombolAkun(k.akun, "garis") + "</div></article>";
         }).join("");
-        return "<h1>Karya</h1><p class=\"sub\">App-app kecil yang aku bikin untuk hidup yang lebih enak.</p>" +
+        return doodleKecil("#9cc4ec") + "<h1>Karya</h1><p class=\"sub\">App-app kecil yang aku bikin untuk hidup yang lebih enak.</p>" +
           (isi || kosong("Belum ada karya", "Segera hadir 🛠️"));
       });
     },
@@ -152,7 +170,7 @@
       return ambil("sekarang", {}).then(function (d) {
         d = d || {};
         var poin = (d.poin || []).filter(Boolean).map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("");
-        return "<h1>Sekarang</h1><p class=\"sub\">Lagi fokus apa bulan ini." +
+        return doodleKecil("#e6b9ea") + "<h1>Sekarang</h1><p class=\"sub\">Lagi fokus apa bulan ini." +
           (d.diperbarui ? " Diperbarui " + tgl(d.diperbarui) + "." : "") + "</p>" +
           (poin ? '<div class="kartu"><ul>' + poin + "</ul></div>" : kosong("Belum diisi", "Fokus bulan ini segera ditulis 📍"));
       });
