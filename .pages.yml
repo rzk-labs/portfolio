@@ -1,0 +1,110 @@
+# Studio Rizka (fase 1) — editor konten lewat Pages CMS (https://app.pagescms.org)
+# Setiap simpan = commit ke repo ini -> Cloudflare Pages auto-deploy ke Hub.
+media:
+  input: assets/foto
+  output: /assets/foto
+
+content:
+  - name: profil
+    label: 👩 Profil
+    type: file
+    path: content/profil.json
+    format: json
+    fields:
+      - { name: nama, label: Nama, type: string, required: true }
+      - { name: tagline, label: Tagline, type: string }
+      - { name: bio, label: Bio singkat, type: text }
+      - { name: foto, label: Foto profil, type: image }
+
+  - name: entitas
+    label: 🌳 Entitas & Akun
+    type: file
+    path: content/entitas.json
+    format: json
+    list: true
+    fields:
+      - { name: id, label: ID (huruf kecil-strip, unik), type: string, required: true }
+      - { name: nama, label: Nama, type: string, required: true }
+      - name: jenis
+        label: Jenis
+        type: select
+        options:
+          values:
+            - { name: pribadi, label: Pribadi }
+            - { name: karya, label: Karya / app }
+            - { name: bisnis, label: Bisnis (sumber tips jualan) }
+      - { name: induk, label: ID induk (kosongkan untuk akar), type: string }
+      - name: segmen
+        label: Segmen audiens
+        type: select
+        options:
+          values:
+            - { name: personal, label: Personal brand }
+            - { name: karya, label: Karya/app }
+            - { name: tips-jualan, label: Tips jualan }
+      - { name: tampil_di_hub, label: Tampil di Hub publik?, type: boolean }
+      - { name: ikon, label: Ikon (emoji), type: string }
+      - { name: deskripsi, label: Deskripsi singkat, type: text }
+      - { name: url, label: Link app/web, type: string }
+      - name: akun
+        label: Akun sosmed
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{platform}"
+        fields:
+          - name: platform
+            label: Platform
+            type: select
+            options:
+              values: [instagram, tiktok, threads, youtube, x, linkedin, web, lainnya]
+          - { name: url, label: Link profil, type: string }
+
+  - name: cerita
+    label: 📸 Cerita
+    type: file
+    path: content/cerita.json
+    format: json
+    list: true
+    fields:
+      - { name: tanggal, label: Tanggal, type: date }
+      - { name: judul, label: Judul, type: string, required: true }
+      - { name: teks, label: Cerita, type: text }
+      - { name: foto, label: Foto, type: image }
+      - { name: link, label: Link posting IG/TikTok/Threads, type: string }
+
+  - name: thoughts
+    label: 💭 Thoughts
+    type: file
+    path: content/thoughts.json
+    format: json
+    list: true
+    fields:
+      - { name: tanggal, label: Tanggal, type: date }
+      - { name: teks, label: Pikiran, type: text, required: true }
+
+  - name: selera
+    label: ✨ Selera
+    type: file
+    path: content/selera.json
+    format: json
+    list: true
+    fields:
+      - name: kategori
+        label: Kategori
+        type: select
+        options:
+          values: [musik, buku, tontonan, makanan, tempat, barang, lainnya]
+      - { name: judul, label: Judul, type: string, required: true }
+      - { name: catatan, label: Kenapa suka, type: text }
+      - { name: link, label: Link, type: string }
+
+  - name: sekarang
+    label: 📍 Sekarang
+    type: file
+    path: content/sekarang.json
+    format: json
+    fields:
+      - { name: diperbarui, label: Diperbarui, type: date }
+      - { name: poin, label: Lagi fokus apa, type: string, list: true }

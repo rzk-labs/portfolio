@@ -1,0 +1,10 @@
+[
+  { "id": "rizka", "nama": "Rizka", "jenis": "pribadi", "induk": "", "segmen": "personal", "tampil_di_hub": true, "ikon": "👩", "deskripsi": "", "url": "", "akun": [] },
+  { "id": "rem-scroll", "nama": "Rem Scroll", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "🛑", "deskripsi": "Rem anti-brainrot: bantu berhenti scroll tanpa sadar.", "url": "https://rzk-labs.github.io/rem-scroll/", "akun": [] },
+  { "id": "gym-otak", "nama": "Gym Otak", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "🧠", "deskripsi": "Latihan otak harian, singkat dan seru.", "url": "https://rzk-labs.github.io/gym-otak/", "akun": [] },
+  { "id": "kepo", "nama": "Kepo", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "📖", "deskripsi": "Belajar bahasa lewat cerita: klik kata, lihat arti, tantang dirimu ngomong.", "url": "https://rzk-labs.github.io/baca-bahasa/", "akun": [] },
+  { "id": "padel-analisis", "nama": "Padel Analisis", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "🎾", "deskripsi": "Analisis rekaman main padel: posisi pemain, jarak, kalori, dan skor.", "url": "https://rzk-labs.github.io/padel-analisis/", "akun": [] },
+  { "id": "rapikan", "nama": "Rapikan", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "🧹", "deskripsi": "Rapikan file dan kompres foto/video di iPhone, semuanya lokal.", "url": "https://rzk-labs.github.io/rapikan/", "akun": [] },
+  { "id": "rak-epub", "nama": "Rak EPUB", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "📚", "deskripsi": "Cari dan unduh buku EPUB dari Internet Archive.", "url": "https://rzk-labs.github.io/rak-epub/", "akun": [] },
+  { "id": "analitik-buku", "nama": "Analitik Buku", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "📊", "deskripsi": "Jelajahi ±15 ribu buku: urutkan rating, saring kategori dan tahun.", "url": "https://rzk-labs.github.io/analitik-buku/", "akun": [] }
+]
