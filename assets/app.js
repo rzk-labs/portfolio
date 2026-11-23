@@ -80,15 +80,15 @@
   }
   function bunga(x, y, w, warna) {
     return '<g class="spin" transform="translate(' + x + ' ' + y + ') scale(' + (w / 60) + ')" fill="' + warna + '">' +
-      '<circle cx="0" cy="-16" r="9"/><circle cx="15" cy="-5" r="9"/><circle cx="9" cy="13" r="9"/><circle cx="-9" cy="13" r="9"/><circle cx="-15" cy="-5" r="9"/><circle cx="0" cy="0" r="6" fill="#6b1e3a"/></g>';
+      '<circle cx="0" cy="-16" r="9"/><circle cx="15" cy="-5" r="9"/><circle cx="9" cy="13" r="9"/><circle cx="-9" cy="13" r="9"/><circle cx="-15" cy="-5" r="9"/><circle cx="0" cy="0" r="6" fill="#1b1b1b"/></g>';
   }
   function doodleHero() {
     return '<svg class="doodle" style="left:50%;top:0;transform:translateX(-50%);width:min(100%,520px);height:250px" viewBox="0 0 360 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">' +
       '<path class="c draw loop" d="M22 70c8-26 30-30 42-12s-14 34-32 20" stroke="#e8623f" stroke-width="7"/>' +
       '<path class="c draw d1" d="M300 40c12-20 34-16 34 4s-28 22-38 8" stroke="#9cc4ec" stroke-width="7"/>' +
-      '<g class="pop" transform="translate(318 150) scale(.9)" fill="#c9d64a">' + BINTANG + '</g>' +
-      bunga(30, 200, 48, "#e6b9ea") +
-      '<path class="c draw d2" d="M250 232c20-14 40 6 60-6" stroke="#8a8f2e" stroke-width="6"/>' +
+      '<g class="pop" transform="translate(318 150) scale(.9)" fill="#e8623f">' + BINTANG + '</g>' +
+      bunga(30, 200, 48, "#9cc4ec") +
+      '<path class="c draw d2" d="M250 232c20-14 40 6 60-6" stroke="#1b1b1b" stroke-width="6"/>' +
       '<path class="c draw d3" d="M60 238c20-8 40-8 60 0" stroke="#1b1b1b" stroke-width="2.5"/></svg>';
   }
   function doodleKecil(warna) {
@@ -121,7 +121,8 @@
           var k = KET[x.id];
           return '<a class="' + k[0] + '" href="' + x.url + '"><b>' + ikonGaris(k[1]) + k[2] + "</b><small>" + k[3] + "</small></a>";
         }).join("");
-        return '<div class="hero">' + doodleHero() + fotoHtml + "<h1>Hello! Aku " + esc(p.nama || "Rizka") + ",<br><i>" + esc(p.tagline || "ibu, pembuat app, & pemain padel") + "</i></h1>" +
+        var tg = String(p.tagline || "ibu, pembuat app, & pemain padel").trim(), ps = tg.lastIndexOf(" ");
+        return '<div class="hero">' + doodleHero() + fotoHtml + "<h1>Hello! Aku " + esc(p.nama || "Rizka") + ',<br><span class="tag">' + esc(tg.slice(0, ps + 1)) + "</span><i>" + esc(tg.slice(ps + 1)) + "</i></h1>" +
           '<p class="sub">' + esc(p.bio) + "</p>" + (sos ? '<div class="tombol-sosmed">' + sos + "</div>" : "") + "</div>" +
           '<div class="pintu">' + pintu + "</div>";
       });
@@ -170,7 +171,7 @@
           var u = urlAman(k.url);
           return '<article class="kartu karya-kartu"><div class="karya-kepala"><div class="ikon">' + esc(k.ikon || "🛠️") + "</div><h3>" +
             esc(k.nama) + "</h3></div><p>" + esc(k.deskripsi) + '</p><div class="aksi">' +
-            (u ? '<a class="tombol" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Coba ' + esc(k.nama) + '">Coba</a>' : "") +
+            (u ? '<a class="tombol" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Coba ' + esc(k.nama) + ' (buka tab baru)">Coba ↗</a>' : "") +
             tombolAkun(k.akun, "garis") + "</div></article>";
         }).join("");
         return doodleKecil("#9cc4ec") + "<h1>Karya</h1><p class=\"sub\">App-app kecil yang aku bikin untuk hidup yang lebih enak.</p>" +

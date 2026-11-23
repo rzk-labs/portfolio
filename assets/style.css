@@ -60,15 +60,15 @@ h2{font-size:1.5rem;margin:26px 0 8px}
 .pol img,.pol .ph{display:block;width:min(62vw,240px);height:auto;aspect-ratio:4/5;object-fit:cover}
 .pol .ph{background:linear-gradient(135deg,#f1d9cb,#c9a97e);display:grid;place-items:center;padding:16px;font-family:var(--hand);font-size:1.15rem;line-height:1.2;color:var(--ink);text-align:center}
 @media (min-width:641px){.pol img,.pol .ph{width:280px}}
-.pol small{position:absolute;left:0;right:0;bottom:4px;text-align:center;font-family:var(--hand);font-size:1rem;color:var(--berry)}
-.hero h1{font-size:2rem;margin:10px 0 4px;position:relative;z-index:1}.hero .sub,.hero .tombol-sosmed{position:relative;z-index:1}
+.pol small{position:absolute;left:0;right:0;bottom:4px;text-align:center;font-family:var(--hand);font-size:1rem;color:var(--ink)}
+.hero h1{font-size:2rem;margin:10px 0 4px;position:relative;z-index:1;text-wrap:balance}.hero .sub,.hero .tombol-sosmed{position:relative;z-index:1}
 .tombol-sosmed{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:12px 0 4px}
 .tombol{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;min-width:64px;text-decoration:none;padding:9px 16px;border-radius:999px;background:var(--ink);color:#fff;font-size:.9rem;font-weight:700}
 .tombol.pepper{background:var(--pepper-teks)}.tombol.garis{background:#fff;color:var(--ink);border:2px solid var(--ink)}
 .pintu{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
 .pintu a{text-decoration:none;color:var(--ink);border-radius:18px;padding:14px 14px 12px;min-height:84px;border:2px solid transparent}
 .pintu a:nth-child(odd){transform:rotate(-1.5deg)}.pintu a:nth-child(even){transform:rotate(1.2deg)}
-.pintu a.p1{background:#fff;border-color:var(--ink)}.pintu a.p2{background:var(--butter)}.pintu a.p3{background:var(--corn)}.pintu a.p4{background:var(--lilac)}.pintu a.p5{background:var(--lime);grid-column:span 2}
+.pintu a.p1{background:#fff;border-color:var(--ink)}.pintu a.p2{background:#fff;border-color:var(--ink)}.pintu a.p3{background:var(--corn)}.pintu a.p4{background:var(--butter)}.pintu a.p5{background:var(--butter);grid-column:span 2}
 .pintu a b{display:block;font-family:var(--hand);font-size:1.15rem;font-weight:400}
 .pintu a b svg{vertical-align:-4px;margin-right:6px}
 .pintu a small{color:#34312c;font-size:.92rem}
@@ -83,8 +83,9 @@ h2{font-size:1.5rem;margin:26px 0 8px}
 .karya-kepala h3{margin:0;font-size:1.35rem}
 .aksi{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .karya-kartu{border-color:transparent}
-.karya-kartu:nth-of-type(4n+1){background:var(--butter)}.karya-kartu:nth-of-type(4n+2){background:var(--corn)}.karya-kartu:nth-of-type(4n+3){background:var(--lilac)}.karya-kartu:nth-of-type(4n){background:var(--lime)}
-.karya-kartu .ikon{background:#fff}
+.karya-kartu:nth-of-type(3n+1){background:var(--butter)}.karya-kartu:nth-of-type(3n+2){background:var(--corn)}.karya-kartu:nth-of-type(3n){background:#fff;border:2px solid var(--ink)}
+.karya-kartu:nth-of-type(odd){transform:rotate(-.8deg)}.karya-kartu:nth-of-type(even){transform:rotate(.6deg)}
+.karya-kartu .ikon{background:#fff}.karya-kartu:nth-of-type(3n) .ikon{background:var(--butter)}
 .kosong-lanjut{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:-4px 0 18px}
 /* cerita */
 .cerita img{width:100%;border-radius:14px;margin:8px 0}
