@@ -1,5 +1,5 @@
 [
-  { "id": "rizka", "nama": "Rizka", "jenis": "pribadi", "induk": "", "segmen": "personal", "tampil_di_hub": true, "ikon": "👩", "deskripsi": "", "url": "", "akun": [] },
+  { "id": "rizka", "nama": "Rizka", "jenis": "pribadi", "induk": "", "segmen": "personal", "tampil_di_hub": true, "ikon": "👩", "deskripsi": "", "url": "", "akun": [{ "platform": "instagram", "url": "https://www.instagram.com/rizka.choi/" }, { "platform": "threads", "url": "https://www.threads.com/@rizka.choi" }] },
   { "id": "rem-scroll", "nama": "Rem Scroll", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "🛑", "deskripsi": "Rem anti-brainrot: bantu berhenti scroll tanpa sadar.", "url": "https://rzk-labs.github.io/rem-scroll/", "akun": [] },
   { "id": "gym-otak", "nama": "Gym Otak", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "🧠", "deskripsi": "Latihan otak harian, singkat dan seru.", "url": "https://rzk-labs.github.io/gym-otak/", "akun": [] },
   { "id": "kepo", "nama": "Kepo", "jenis": "karya", "induk": "rizka", "segmen": "karya", "tampil_di_hub": true, "ikon": "📖", "deskripsi": "Belajar bahasa lewat cerita: klik kata, lihat arti, tantang dirimu ngomong.", "url": "https://rzk-labs.github.io/baca-bahasa/", "akun": [] },
