@@ -67,9 +67,8 @@ h2{font-size:1.5rem;margin:26px 0 8px}
 .tombol.pepper{background:var(--pepper-teks)}.tombol.garis{background:#fff;color:var(--ink);border:2px solid var(--ink)}
 .pintu{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
 .pintu a{text-decoration:none;color:var(--ink);border-radius:18px;padding:14px 14px 12px;min-height:84px;border:2px solid transparent}
-.pintu a:nth-child(odd){transform:rotate(-1.5deg)}.pintu a:nth-child(even){transform:rotate(1.2deg)}
 .pintu a.p1{background:#fff;border-color:var(--ink)}.pintu a.p2{background:#fff;border-color:var(--ink)}.pintu a.p3{background:var(--corn)}.pintu a.p4{background:var(--butter)}.pintu a.p5{background:var(--butter);grid-column:span 2}
-.pintu a b{display:block;font-family:var(--hand);font-size:1.15rem;font-weight:400}
+.pintu a b{display:block;font-family:var(--serif);font-size:1.3rem;font-weight:400}
 .pintu a b svg{vertical-align:-4px;margin-right:6px}
 .pintu a small{color:#34312c;font-size:.92rem}
 /* thoughts */
@@ -84,7 +83,6 @@ h2{font-size:1.5rem;margin:26px 0 8px}
 .aksi{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .karya-kartu{border-color:transparent}
 .karya-kartu:nth-of-type(3n+1){background:var(--butter)}.karya-kartu:nth-of-type(3n+2){background:var(--corn)}.karya-kartu:nth-of-type(3n){background:#fff;border:2px solid var(--ink)}
-.karya-kartu:nth-of-type(odd){transform:rotate(-.8deg)}.karya-kartu:nth-of-type(even){transform:rotate(.6deg)}
 .karya-kartu .ikon{background:#fff}.karya-kartu:nth-of-type(3n) .ikon{background:var(--butter)}
 .kosong-lanjut{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:-4px 0 18px}
 /* cerita */
