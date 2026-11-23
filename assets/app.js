@@ -1,6 +1,7 @@
 // Hub Rizka — merender halaman dari file content/*.json (diedit lewat Studio / Pages CMS)
 (function () {
   "use strict";
+  var ikonkan = window.ikonkan || function (h) { return h; }; // ikon gambar sendiri (assets/ikon.js); tanpa itu tetap tampil apa adanya
 
   var HALAMAN = [
     { id: "beranda", label: "Beranda", url: "/" },
@@ -194,7 +195,7 @@
   kerangka(halaman);
   var main = document.getElementById("isi");
   (RENDER[halaman] || RENDER.beranda)().then(function (html) {
-    main.innerHTML = html;
+    main.innerHTML = ikonkan(html);
   }).catch(function () {
     main.innerHTML = kosong("Ups", "Konten gagal dimuat. Coba muat ulang.");
   });

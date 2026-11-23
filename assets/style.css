@@ -90,3 +90,7 @@ h2{font-size:1.5rem;margin:26px 0 8px}
 /* cerita */
 .cerita img{width:100%;border-radius:14px;margin:8px 0}
 .kaki{color:var(--pudar);font-size:.98rem;text-align:center;padding:24px 0 44px;border-top:1px solid var(--garis);font-family:var(--hand)}
+/* ikon gambar sendiri (assets/ikon.js) */
+.ikn{width:1.15em;height:1.15em;vertical-align:-.25em;flex:none}
+.ik{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.ikon .ikn{width:62%;height:62%;vertical-align:baseline}
