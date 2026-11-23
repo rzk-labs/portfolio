@@ -135,7 +135,8 @@
           return '<article class="kartu"><div class="thought">' + paragraf(t.teks) + '</div><div class="tanggal">' + tgl(t.tanggal) + "</div></article>";
         }).join("");
         return doodleKecil("#e8623f") + "<h1>Thoughts</h1><p class=\"sub\">Pikiran random dan renungan hidup.</p>" +
-          (isi || kosong("Belum ada thought", "Pikiran pertama segera mampir 💭"));
+          (isi || kosong("Belum ada thought", "Pikiran pertama segera mampir 💭") +
+            '<p class="kosong-lanjut"><a class="tombol garis" href="/cerita">Lihat Cerita</a><a class="tombol garis" href="/selera">Lihat Selera</a></p>');
       });
     },
 
@@ -156,9 +157,9 @@
       return ambil("entitas", []).then(function (d) {
         var isi = (d || []).filter(function (e) { return e.jenis === "karya" && e.tampil_di_hub; }).map(function (k) {
           var u = urlAman(k.url);
-          return '<article class="kartu"><div class="karya-kepala"><div class="ikon">' + esc(k.ikon || "🛠️") + "</div><h3>" +
+          return '<article class="kartu karya-kartu"><div class="karya-kepala"><div class="ikon">' + esc(k.ikon || "🛠️") + "</div><h3>" +
             esc(k.nama) + "</h3></div><p>" + esc(k.deskripsi) + '</p><div class="aksi">' +
-            (u ? '<a class="tombol" href="' + esc(u) + '" target="_blank" rel="noopener">Coba</a>' : "") +
+            (u ? '<a class="tombol" href="' + esc(u) + '" target="_blank" rel="noopener" aria-label="Coba ' + esc(k.nama) + '">Coba</a>' : "") +
             tombolAkun(k.akun, "garis") + "</div></article>";
         }).join("");
         return doodleKecil("#9cc4ec") + "<h1>Karya</h1><p class=\"sub\">App-app kecil yang aku bikin untuk hidup yang lebih enak.</p>" +
