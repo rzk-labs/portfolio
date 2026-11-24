@@ -68,7 +68,7 @@
 
   // ---------- doodle hidup (brand v5) ----------
   var BINTANG = '<path d="M20 2l5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/>';
-  var AWAN = '<svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="c" d="M18 48c-7 0-11-5-10-11 1-5 6-8 11-6 1-9 9-14 17-12 7 2 11 8 10 14 6-1 11 3 11 8 0 4-4 7-9 7z" stroke="#9cc4ec" stroke-width="5"/></svg>';
+  var AWAN = '<svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="c" d="M18 48c-7 0-11-5-10-11 1-5 6-8 11-6 1-9 9-14 17-12 7 2 11 8 10 14 6-1 11 3 11 8 0 4-4 7-9 7z" stroke="#e6b9ea" stroke-width="7"/><path class="c" d="M54 11c0-1.4 1.8-1.7 2.4-.4.7 1.7-.8 3.3-2.6 3.1-2.4-.2-3.3-2.8-2.2-4.8 1.3-2.4 4.6-2.8 6.4-1" stroke="#1b1b1b" stroke-width="2.5"/></svg>';
   var IKON = {
     hati: '<path d="M12 20s-7.5-4.6-8.6-9.4C2.6 7.2 5 4.6 7.7 5c1.9.3 3.3 1.8 4.3 3.4 1-1.6 2.4-3.1 4.3-3.4 2.7-.4 5.1 2.2 4.3 5.6C19.5 15.4 12 20 12 20z"/>',
     awan: '<path d="M7 18c-3 0-4.5-2.3-4-4.6.5-2 2.6-3 4.3-2.5.4-3 3-5 6-4.6 2.7.4 4.4 2.6 4.3 5 2.5-.2 4.2 1.6 4 3.6-.2 1.8-1.7 3.1-3.6 3.1z"/>',

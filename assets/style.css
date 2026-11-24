@@ -55,6 +55,7 @@ h2{font-size:1.5rem;margin:26px 0 8px}
 .kosong svg{display:block;margin:0 auto 8px}
 /* beranda */
 .hero{position:relative;text-align:center;padding:16px 0 8px;min-height:230px}
+.hero .doodle{z-index:2}
 .pol{display:inline-block;background:#fff;padding:8px 8px 26px;box-shadow:0 8px 20px rgba(0,0,0,.16);transform:rotate(-4deg);position:relative;margin:10px auto 6px}
 .pol::before{content:"";position:absolute;top:-9px;left:34%;width:58px;height:15px;background:rgba(255,241,168,.92);transform:rotate(-7deg)}
 .pol img,.pol .ph{display:block;width:min(62vw,240px);height:auto;aspect-ratio:4/5;object-fit:cover}
@@ -68,6 +69,8 @@ h2{font-size:1.5rem;margin:26px 0 8px}
 .pintu{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
 .pintu a{text-decoration:none;color:var(--ink);border-radius:18px;padding:14px 14px 12px;min-height:84px;border:2px solid transparent}
 .pintu a.p1{background:#fff;border-color:var(--ink)}.pintu a.p2{background:#fff;border-color:var(--ink)}.pintu a.p3{background:var(--corn)}.pintu a.p4{background:var(--butter)}.pintu a.p5{background:var(--butter);grid-column:span 2}
+.pintu a:nth-child(2){transform:rotate(-1.5deg)}.pintu a:nth-child(4){transform:rotate(1.2deg)}
+.pintu a.p5{position:relative}.pintu a.p5::before{content:"";position:absolute;top:-8px;right:18%;width:54px;height:14px;background:rgba(255,241,168,.92);box-shadow:0 1px 3px rgba(0,0,0,.18);transform:rotate(6deg)}
 .pintu a b{display:block;font-family:var(--serif);font-size:1.3rem;font-weight:400}
 .pintu a b svg{vertical-align:-4px;margin-right:6px}
 .pintu a small{color:#34312c;font-size:.92rem}
